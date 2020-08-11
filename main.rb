@@ -1,20 +1,31 @@
-class Animal
-  attr_accessor :name
-
-  def initialize; end
+module Walkable
+  def walk
+    "I'm walking."
+  end
 end
 
-class Dog < Animal
-  def initialize(name, color)
-    super
-    @color = color
+module Swimmable
+  def swim
+    "I'm swimming."
   end
+end
+
+module Climbable
+  def climb
+    "I'm climbing."
+  end
+end
+
+class Animal
+  include Walkable
+  include Climbable
 
   def speak
-    "But #{@name} - eyes #{@color} says Bark Bark"
+    "I'm an animal, and I speak!"
   end
 end
 
-dog = Dog.new('Red', 'Cristian')
+puts Animal.ancestors
 
-puts dog.speak
+fido = Animal.new
+p fido.climb
