@@ -1,14 +1,14 @@
 class Animal
   def speak
-    "Animals don`t speak!"
+    'Animals don`t speak!'
   end
 end
 
 class Dog < Animal
   attr_accessor :name
 
-  def initialize(n)
-    @name = n
+  def initialize(name)
+    @name = name
   end
 
   def speak
@@ -18,11 +18,11 @@ end
 
 class Cat < Animal
   def speak
-    puts "Miaouuu"
+    puts 'Miaouuu'
   end
 end
 
-dog = Dog.new("Cristian")
+dog = Dog.new('Cristian')
 cat = Cat.new
 
 puts dog.speak
