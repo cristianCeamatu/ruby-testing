@@ -1,24 +1,21 @@
-class Dog
-  MULTIPLIER = 7
-
-  attr_accessor :name, :age
-
-  def initialize(name, age)
+class Student
+  def initialize(name, grade)
     @name = name
-    @age = age
+    @grade = grade
   end
 
-  def public_years
-    "#{name} in human years is #{human_years}"
+  def better_grade_then?(other_student)
+    @grade > other_student.grade
   end
 
-  private
+  protected
 
-  def human_years
-    age * MULTIPLIER
+  def grade
+    grade
   end
 end
 
-dog = Dog.new('Sparky', 25)
+joe = Student.new('Joe', 9)
+bob = Student.new('Bob', 7)
 
-p dog.public_years
+p 'Well done!' if joe.better_grade_then?(bob)
