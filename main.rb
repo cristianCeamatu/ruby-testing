@@ -1,23 +1,24 @@
-module Mammal
-  class Dog
-    def speak(sound)
-      p "#{sound}"
-    end
+class Dog
+  MULTIPLIER = 7
+
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+    @name = name
+    @age = age
   end
 
-  class Cat
-    def say_name(name)
-      p "#{name}"
-    end
+  def public_years
+    "#{name} in human years is #{human_years}"
   end
 
-  def self.expo(num)
-    num ** 2
+  private
+
+  def human_years
+    age * MULTIPLIER
   end
 end
 
-dog = Mammal::Dog.new
+dog = Dog.new('Sparky', 25)
 
-dog.speak('woff woff')
-
-p Mammal::expo(8)
+p dog.public_years
