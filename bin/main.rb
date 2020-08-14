@@ -6,7 +6,6 @@ module Enumerable
   def my_each
     return to_enum unless block_given?
 
-    # The to_a() of enumerable is an inbuilt method in Ruby that returns an array containing all the items of the enumerable.
     input_array = to_a
     input_array.length.times { |index| yield(input_array[index]) } 
 
@@ -16,7 +15,6 @@ module Enumerable
   def my_each_with_index
     return to_enum(:each_with_index) unless block_given?
 
-    # The to_a() of enumerable is an inbuilt method in Ruby that returns an array containing all the items of the enumerable.
     input_array = to_a
     input_array.length.times { |index| yield(input_array[index], index) } 
 
